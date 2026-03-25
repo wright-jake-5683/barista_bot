@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="barista_bot">
+
+<xacro:macro name="cup_holder_tray">
+    <link name="cup_holder_link">
+        <visual>
+            <geometry>
+                <cylinder length=".090" radius="0.160" />
+            </geometry>
+            <material name="blue"/>
+        </visual>
+
+        <collision>
+            <geometry>
+            <cylinder length="0.090" radius="0.160"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+        <mass value="0.25"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.00176875" ixy="0" ixz="0" iyy="0.00176875" iyz="0" izz="0.0032"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="cup_holder_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+</xacro:macro>
+
+</robot>

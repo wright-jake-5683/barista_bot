@@ -431,7 +431,7 @@
 </link>
 
 <joint name="main_body_to_back_yaw_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.128 0 -0.0878" />
+    <origin rpy="0 0 0" xyz="-0.120 0 -0.0878" />
     <parent link="main_body_link" />
     <child link="back_yaw_link" />
     <axis xyz="0 0 1" />

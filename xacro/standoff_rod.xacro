@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="barista_bot">
+
+<xacro:macro name="standoff_rod" params="link_name width length">
+    <link name="${link_name}">
+        <visual>
+            <geometry>
+                <cylinder length="${length}" radius="${width}" />
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <collision>
+            <geometry>
+            <cylinder length="${length}" radius="${width}"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+        <mass value="0.05"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.00020291666666" ixy="0" ixz="0" iyy="0.00020291666666" iyz="0" izz="0.0000025"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="${link_name}">
+        <material>Gazebo/White</material>
+    </gazebo>
+</xacro:macro>
+
+</robot>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="barista_bot">
+
+<xacro:macro name="laser_scanner">
+    <link name="laser_scan_link">
+        <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <mesh filename="package://barista_robot_description/meshes/hokuyo_urg_04lx.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        </visual>
+
+        <collision>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="0.113398"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.000047249166666" ixy="0" ixz="0" iyy="0.000047249166666" iyz="0" izz="0.000047249166666"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="laser_scan_link">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+</xacro:macro>
+
+</robot>
